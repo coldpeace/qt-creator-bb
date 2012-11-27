@@ -1,0 +1,99 @@
+/****************************************************************************
+**
+** Copyright (c) 2012 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of Qt Creator
+**
+**
+** GNU Free Documentation License
+**
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+**
+****************************************************************************/
+
+// **********************************************************************
+// NOTE: the sections are not ordered by their logical order to avoid
+// reshuffling the file each time the index order changes (i.e., often).
+// Run the fixnavi.pl script to adjust the links to the index order.
+// **********************************************************************
+
+/*!
+
+    \contentspage index.html
+    \previouspage creator-design-mode.html
+    \page creator-visual-editor.html
+    \nextpage quick-projects.html
+
+    \title Developing Qt Quick Applications
+
+    You can either create Qt Quick projects from scratch or import existing
+    projects to \QC.
+
+    You can use the code editor (\l{Working in Edit Mode}{Edit mode}) or the
+    visual editor (\l{Using Qt Quick Designer}{Design mode}) to develop Qt Quick
+    applications.However, the visual editor only supports Qt Quick 1.
+
+    Typically, application development proceeds as follows:
+
+    \table
+        \row
+            \o  \inlineimage creator_createproject.png
+            \o  \inlineimage creator_createcomponents.png
+            \o  \inlineimage creator_createscreen.png
+        \row
+            \o  \l {Creating Qt Quick Projects}{Create or import projects.}
+            \o  \l {Creating Components}{Create components.}
+            \o  \l {Creating Screens}{Create screens.}
+        \row
+            \o  \inlineimage creator_createanimation.png
+            \o  \inlineimage creator_createuserinter.png
+            \o  \inlineimage creator_createcode.png
+        \row
+            \o  \l {Animating Screens}{Add animation to screens.}
+            \o  \l {Adding User Interaction Methods}
+                {Add user interaction methods.}
+            \o  \l {Implementing Application Logic}
+                {Implement the application logic.}
+    \endtable
+
+    \section1 Related Topics
+
+    \list
+        \if defined(qcmanual)
+        \o  \l {Using Qt Quick Designer}
+        \o  \l {Creating Buttons}
+        \o  \l {Creating Scalable Buttons and Borders}
+        \endif
+        \o  \l {Exporting Designs from Graphics Software}
+        \o  \l {Using QML Modules with Plugins}
+
+    \endlist
+
+*/
+
+
+/*!
+
+    \contentspage index.html
+    \previouspage quick-export-to-qml.html
+    \page quick-application-logic.html
+    \nextpage creator-qml-modules-with-plugins.html
+
+    \title Implementing Application Logic
+
+    A user interface is only a part of an application, and not really useful by itself.
+    You can use Qt or JavaScript to implement the application logic. For more information on
+    using JavaScript, see
+    \l {http://qt-project.org/doc/qt-4.8/qdeclarativejavascript.html}
+    {Integrating JavaScript}.
+
+    For an example of how to use JavaScript to develop a game, see the
+    \l {http://qt-project.org/doc/qt-4.8/qml-advtutorial.html}
+    {QML Advanced Tutorial}.
+
+ */

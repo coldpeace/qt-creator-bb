@@ -1,0 +1,81 @@
+/****************************************************************************
+**
+** Copyright (c) 2012 Digia Plc and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of Qt Creator
+**
+**
+** GNU Free Documentation License
+**
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+**
+****************************************************************************/
+
+// **********************************************************************
+// NOTE: the sections are not ordered by their logical order to avoid
+// reshuffling the file each time the index order changes (i.e., often).
+// Run the fixnavi.pl script to adjust the links to the index order.
+// **********************************************************************
+
+/*!
+    \contentspage index.html
+    \previouspage creator-quick-tour.html
+    \page creator-build-example-application.html
+    \nextpage creator-tutorials.html
+
+    \title Building and Running an Example
+
+    You can test that your \QSDK installation is successful by opening an existing
+    example application project.
+
+    \list 1
+
+        \o  On the \gui Welcome page, select \gui Examples (1).
+
+            \image qtcreator-gs-build-example-open.png "Selecting an example"
+
+        \o  Search for \gui {Toys: Clocks Example} (2) in the list of examples
+            and select it (3).
+
+            \note The project opens in the \gui Edit mode, and the documentation
+            for the example hides these instructions. To return to these
+            instructions, select \gui {Previous Page} on the toolbar or
+            press \key {Alt+Left}.
+
+        \o  Select \gui Projects to configure the project:
+
+            \image qtcreator-gs-build-example-targets.png "Selecting kit for building and running"
+
+            \list 1
+
+                \o  Select the kits \l{glossary-buildandrun-kit}{kits} (1) that
+                    specify the devices you develop for.
+
+                \o  Select \gui {Configure Project} (2).
+
+            \endlist
+
+        \o  To check that the application code can be compiled and linked for a
+            device, click the \gui {Kit Selector} and select a kit for the
+            device.
+
+            \image qtcreator-kit-selector.png "Selecting a kit to build with"
+
+        \o  Click
+            \inlineimage qtcreator-run.png
+            (\gui Run) to build and run the application.
+
+        \o  To see the compilation progress, press \key{Alt+4} to open the
+            \gui {Compile Output} pane.
+
+            The \gui Build progress bar on the toolbar turns green when the
+            project is successfully built. The application opens on the device.
+
+    \endlist
+
+*/
