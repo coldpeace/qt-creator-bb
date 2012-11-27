@@ -21,6 +21,7 @@ BlackBerrySettingsWidget::BlackBerrySettingsWidget(QWidget *parent) :
 
     connect(m_ui->sdkPath, SIGNAL(changed(QString)), this, SLOT(checkSdkPath()));
     connect(m_ui->setupButton, SIGNAL(clicked()), this, SLOT(setToolChain()));
+    connect(m_ui->clearButton, SIGNAL(clicked()), m_bbConfig, SLOT(removeToolChain()));
     connect(m_bbConfig, SIGNAL(updated()), this, SLOT(updateInfoTable()));
 }
 
@@ -49,8 +50,13 @@ void BlackBerrySettingsWidget::updateInfoTable()
 {
     QMultiMap<QString, QString> env = m_bbConfig->qnxEnv();
 
-    if(env.isEmpty())
+    if(env.isEmpty()) {
+        // Clear
+        m_infoModel->clear();
+        m_ui->sdkPath->setPath(QString());
         return;
+    }
+
 
     m_infoModel->setHorizontalHeaderItem(0, new QStandardItem(QString(QLatin1String("Variable"))));
     m_infoModel->setHorizontalHeaderItem(1, new QStandardItem(QString(QLatin1String("Value"))));
@@ -71,6 +77,7 @@ void BlackBerrySettingsWidget::updateInfoTable()
     m_infoModel->appendRow( QList<QStandardItem*>() << new QStandardItem(QString(QLatin1String("QMake Path"))) << new QStandardItem(m_bbConfig->qmakePath().toString()));
     m_infoModel->appendRow( QList<QStandardItem*>() << new QStandardItem(QString(QLatin1String("Gcc Path"))) << new QStandardItem(m_bbConfig->gccPath().toString()));
 
+    m_ui->clearButton->setEnabled(true);
 }
 
 void BlackBerrySettingsWidget::initInfoTable()

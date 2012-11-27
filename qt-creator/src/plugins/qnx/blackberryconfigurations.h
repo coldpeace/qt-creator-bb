@@ -38,6 +38,9 @@ public:
 protected:
     void addQtVersion();
 
+protected slots:
+    void removeToolChain();
+
 private:
     BlackBerryConfigurations(QObject *parent = 0);
     static BlackBerryConfigurations *m_instance;

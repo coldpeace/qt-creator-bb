@@ -41,7 +41,7 @@ static Utils::FileName settingsFileName()
 BlackBerryConfigurations::BlackBerryConfigurations(QObject *parent)
     :QObject(parent)
 {
-    loadSetting();
+//    loadSetting();
 }
 
 void BlackBerryConfigurations::setToolChain(const QString &ndkPath)
@@ -88,11 +88,24 @@ void BlackBerryConfigurations::setToolChain(const QString &ndkPath)
     addQtVersion();
 }
 
+void BlackBerryConfigurations::removeToolChain()
+{
+    // Remove Qt Version
+    QtSupport::BaseQtVersion *version = QtSupport::QtVersionManager::instance()->qtVersionForQMakeBinary(m_config.qmakeBinaryFile);
+    if (version) {
+        QtSupport::QtVersionManager::instance()->removeVersion(version);
+        BlackBerryConfig conf;
+        m_config = conf;
+        emit updated();
+    }
+}
+
 void BlackBerryConfigurations::addQtVersion()
 {
     if(m_config.qmakeBinaryFile.isEmpty())
         return;
 
+    emit updated(); // just for test...
     // This should be set in the bbndk-script
     QString cpuDir = QLatin1String("armle-v7");
     // Check if the qmake is not already register
@@ -104,7 +117,6 @@ void BlackBerryConfigurations::addQtVersion()
     }
 
     version = new BlackBerryQtVersion(QnxUtils::cpudirToArch(cpuDir), m_config.qmakeBinaryFile, true, QString(), m_config.ndkPath);
-
     if (!version) {
         QMessageBox::warning(0, QLatin1String("Qt not valid"),
                              QLatin1String("Unable to add BlackBerry Qt version"), QMessageBox::Ok);
@@ -114,7 +126,6 @@ void BlackBerryConfigurations::addQtVersion()
     version->setDisplayName(QLatin1String("BlackBerry 10 NDK Qt"));
     QtSupport::QtVersionManager::instance()->addVersion(version);
     emit updated();
-
 }
 
 bool BlackBerryConfigurations::checkPath(const QString &path)
